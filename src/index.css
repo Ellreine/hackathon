@@ -34,6 +34,12 @@ body {
 
 	/* background: rgb(2, 16, 36); */
 }
+.background {
+	background-image: url('./assets/gradient.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 .text {
 	position: relative;
@@ -75,7 +81,9 @@ body {
 
 .back {
 	transform: perspective(600px) rotateY(180deg);
-	background: #001b48;
+	background-image: url('./assets/card.png');
+	background-size: cover;
+	background-position: bottom;
 }
 
 .gradient {

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 const FavoriteItem = ({ participant, handleDeleteFavorites }) => {
-	console.log(participant.photo);
 	return (
 		<div className="bg-slate-300/50 w-80 h-fit rounded-xl  overflow-hidden text-center">
 			<img src={participant.photo} alt={participant.name} />

@@ -1,13 +1,25 @@
-import { Elijah, Lera, Nikita, Ajiniyaz } from '../assets';
+import {
+	Elijah,
+	Lera,
+	Nikita,
+	Ajiniyaz,
+	Nikita1,
+	Lera1,
+	Lera2,
+	Lera3,
+	Elijah1,
+	Elijah2,
+} from '../assets';
 
-const initialState = [
+const data = [
 	{
 		id: '258',
 		name: 'Ilya Korenevskiy',
 		age: 26,
-		city: 'Moscow',
+		city: 'Tomsk',
 		profession: 'Frontend Developer',
 		photo: Elijah,
+		portfolio: [Elijah1, Elijah2],
 		about: 'Кто не желает меняться, тот не развивается',
 		technology: ['HTML', 'CSS', 'JS', 'React', 'TailWind', 'Redux'],
 		color: 'bg-[#018abe]',
@@ -15,8 +27,8 @@ const initialState = [
 		// color: 'bg-[#3868d9]',
 		social: {
 			linkedIn: 'https://linkedin.com/in/mur-archiviste',
-			telegram: 'https://t.me/mur_archiviste',
-			github: 'https://github.com/mur-archiviste',
+			telegram: 'https://t.me/ellreine',
+			github: 'https://github.com/ellreine',
 		},
 		tasks: {
 			1: 'Поднятие коммандного духа',
@@ -36,14 +48,15 @@ const initialState = [
 		city: 'Moscow',
 		profession: 'Frontend Developer',
 		photo: Lera,
+		portfolio: [Lera1, Lera2, Lera3],
 		about: 'Мне нравится рисовать и путешествовать.',
 		technology: ['HTML', 'CSS', 'JS', 'React', 'TailWind', 'Redux'],
 		color: 'bg-[#e1cbd7]',
 		favorite: false,
 		social: {
-			linkedIn: 'https://linkedin.com/in/mur-archiviste',
-			telegram: 'https://t.me/mur_archiviste',
-			github: 'https://github.com/mur-archiviste',
+			linkedIn: 'https://linkedin.com/in/valeryia-bareisha',
+			telegram: 'https://t.me/den_asmos',
+			github: 'https://github.com/den-asmos',
 		},
 		tasks: {
 			1: 'Поднятие коммандного духа',
@@ -59,18 +72,19 @@ const initialState = [
 	{
 		id: '789',
 		name: 'Nikita Kapusta',
-		age: 30,
-		city: 'Moscow',
+		age: 21,
+		city: 'Omsk',
 		profession: 'Frontend Developer',
 		photo: Nikita,
+		portfolio: [Nikita1, Nikita1],
 		about: 'Я люблю программировать и учить новые технологии.',
 		technology: ['HTML', 'CSS', 'JS', 'React', 'TailWind', 'Redux'],
 		color: 'bg-[#86a8cf]',
 		favorite: false,
 		social: {
 			linkedIn: 'https://linkedin.com/in/mur-archiviste',
-			telegram: 'https://t.me/mur_archiviste',
-			github: 'https://github.com/mur-archiviste',
+			telegram: 'https://t.me/KapustaBOSS',
+			github: 'https://github.com/Kapustian2',
 		},
 		tasks: {
 			1: 'Поднятие коммандного духа',
@@ -85,11 +99,12 @@ const initialState = [
 	},
 	{
 		id: '147',
-		name: 'Ажинияз Д.',
+		name: 'Ajiniyaz Dzhiyemuratov',
 		age: 31,
 		city: 'Nukus',
 		profession: 'Frontend Developer',
 		photo: Ajiniyaz,
+		portfolio: [Nikita1, Nikita1],
 		about: 'Я люблю программировать и учить новые технологии.',
 		technology: ['HTML', 'CSS', 'JS', 'React', 'TailWind', 'Redux'],
 		color: 'bg-[#26425a]',
@@ -111,6 +126,20 @@ const initialState = [
 		},
 	},
 ];
+
+const participants = localStorage.getItem('participants')
+	? JSON.parse(localStorage.getItem('participants'))
+	: [];
+
+const initialState = data.map((object1) => {
+	const matchItem = participants.find((object2) => object2.id === object1.id);
+	if (matchItem) {
+		return matchItem;
+	}
+	return object1;
+});
+console.log('initialState', initialState);
+console.log('participants', participants);
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {

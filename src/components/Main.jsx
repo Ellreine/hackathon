@@ -5,7 +5,7 @@ import PersonCard from './Personal-card';
 
 const Main = ({ peopleDataState, onAddToFavoritesClick, favoritesLocalStorage }) => {
 	return (
-		<main className="min-h-screen bg-orange-100">
+		<main className="min-h-screen background">
 			<Navbar />
 			<section className="flex flex-col items-center p-10  text-gray-600">
 				<h1 className="text-3xl font-bold">This is the DreamTeam</h1>

@@ -20,7 +20,6 @@ const App = () => {
 		const storedValue = localStorage.getItem('participants');
 		return storedValue ? JSON.parse(storedValue) : [];
 	});
-	console.log(favoritesLocalStorage);
 
 	const onAddToFavoritesClick = (favPersonId) => {
 		dispatch(toggleFavorite(favPersonId));
@@ -29,7 +28,6 @@ const App = () => {
 
 		const hasFavorite = favoritesLocalStorage.some((object) => object.id === favPersonId);
 
-		console.log('check', hasFavorite);
 		if (!hasFavorite) {
 			setFavoritesLocalStorage((prev) => [...prev, ...tolocal]);
 		} else {

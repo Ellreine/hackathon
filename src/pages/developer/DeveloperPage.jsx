@@ -7,23 +7,22 @@ import { github, linkedIn, telegram } from '../../assets';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Button from '../../components/Button';
+import Slider from '../../components/Slider';
 
 const DeveloperPage = ({ peopleDataState }) => {
 	const navigate = useNavigate();
 	const { paramId } = useParams();
 
 	const dev = peopleDataState.filter((person) => person.id === paramId);
-
-	console.log(dev);
 	return (
-		<main className="min-h-screen bg-orange-100">
+		<main className="min-h-screen background">
 			<Navbar />
 
 			<div className="max-w-[1080px] w-full flex flex-col py-2 px-4">
-				<div className="flex justify-center">
+				<div className="flex justify-center text-white">
 					<Button
 						title={'Go back'}
-						color={'bg-orange-400'}
+						color={'bg-[#417dc3]'}
 						rounded={true}
 						onClick={() => navigate(-1)}
 					/>
@@ -33,7 +32,7 @@ const DeveloperPage = ({ peopleDataState }) => {
 						<img
 							src={dev[0].photo}
 							alt={dev[0].name}
-							className="w-60 h-60 rounded-full object-contain"
+							className="w-60 h-60 rounded-full object-fill "
 						/>
 					</div>
 					<h2 className="mx-2 my-4 text-5xl">{dev[0].name}</h2>
@@ -46,6 +45,9 @@ const DeveloperPage = ({ peopleDataState }) => {
 
 				<div className="mx-2 my-4">
 					<h3 className="my-2 text-3xl text-indigo-400">Портфолио</h3>
+					<div className="">
+						<Slider images={dev[0].portfolio} />
+					</div>
 					<Progress title="JS" percent={dev[0].progress.JS} color="#fbbf24" />
 					<Progress title="React" percent={dev[0].progress.React} color="#3b82f6" />
 					<Progress title="Node" percent={dev[0].progress.Node} color="#16a34a" />

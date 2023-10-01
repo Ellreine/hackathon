@@ -15,7 +15,7 @@ const Favorites = ({ favoritesLocalStorage, setFavoritesLocalStorage }) => {
 	};
 
 	return (
-		<main className="min-h-screen bg-orange-100">
+		<main className="min-h-screen background">
 			<Navbar />
 			<ul className="p-8 grid grid-cols-2 gap-8 place-items-center">
 				{favoritesLocalStorage.map((participant) => (
