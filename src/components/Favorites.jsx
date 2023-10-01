@@ -3,11 +3,9 @@ import Navbar from './Navbar';
 import FavoriteItem from './FavoriteItem';
 import Footer from './Footer';
 import { removeFavorite } from '../actions/removeFavorites';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const Favorites = ({ favoritesLocalStorage, setFavoritesLocalStorage }) => {
-	const store = useSelector((store) => store);
-
 	const dispatch = useDispatch();
 	const handleDeleteFavorites = (id) => {
 		dispatch(removeFavorite(id));
