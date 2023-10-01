@@ -4,7 +4,7 @@ import Logo from './Logo';
 const Navbar = () => {
 	const activeLink = 'text-orange-400';
 	return (
-		<nav className="flex items-center justify-between bg-gray-600 text-slate-100 mx-auto">
+		<nav className="flex items-center justify-between bg-gray-600 text-slate-100 mx-auto sticky top-0 z-10">
 			<Logo />
 			<ul className="flex space-x-10 mr-6">
 				<li>
