@@ -1,3 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Manrope', sans-serif;
+	font-weight: 400;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	height: 100vh;
+	/* background: linear-gradient(
+			0deg,
+			rgba(2, 16, 36, 1) 0%,
+			rgba(2, 69, 122, 1) 25%,
+			hsl(197, 99%, 37%) 50%,
+			rgba(151, 202, 219, 1) 75%,
+			rgba(213, 232, 238, 1) 100%
+		)
+		no-repeat;
+	background-size: 100%; */
+
+	/* background: rgb(2, 16, 36); */
+}
+.background {
+	background-image: url('./assets/gradient.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.text {
+	position: relative;
+	color: #212121;
+	font-size: 150px;
+	letter-spacing: 15px;
+	text-transform: uppercase;
+	/* border-bottom: 18px solid #212121; */
+}
+
+.text:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: 'Our_Team_';
+	color: #0187bc;
+	overflow: hidden;
+	animation: loading-left 4.5s infinite linear;
+}
+
+@keyframes loading-left {
+	100% {
+		width: 100%;
+	}
+	0% {
+		width: 0;
+	}
+}
+
+/*flip card*/
+.front,
+.back {
+	backface-visibility: hidden;
+}
+
+.front {
+	transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+	transform: perspective(600px) rotateY(180deg);
+	background-image: url('./assets/card.png');
+	background-size: cover;
+	background-position: bottom;
+}
+
+.gradient {
+	background: linear-gradient(
+		45deg,
+		rgba(2, 16, 36, 1) 0%,
+		rgba(2, 69, 122, 1) 25%,
+		rgba(1, 135, 188, 1) 50%,
+		rgba(151, 202, 219, 1) 75%,
+		rgba(213, 232, 238, 1) 100%
+	);
+	background-size: 350%;
+}
+
+.gradientLight {
+	background: rgb(2, 16, 36);
+	background: linear-gradient(45deg, rgba(2, 69, 122, 1) 0%, rgba(1, 138, 190, 1) 75%);
+}
+
+.card:hover > .front {
+	transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+	transform: perspective(600px) rotateY(0deg);
+}
+
+/* Developer_Page */
+.percentage {
+	position: relative;
+	display: block;
+	height: 100%;
+	border-radius: 6px;
+	animation: progress 0.4s ease-in-out forwards;
+}
+
+@keyframes progress {
+	0% {
+		width: 0;
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.tooltip {
+	padding: 2px 6px;
+	position: absolute;
+	right: -14px;
+	bottom: -24px;
+	color: #fff;
+	font-size: 10px;
+	border-radius: 6px;
+	z-index: 1;
+}
